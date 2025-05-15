@@ -22,6 +22,10 @@ public class IntroActivity extends BaseActivity {
                 startActivity(new Intent(IntroActivity.this, MainActivity.class));
             }
         });
+        binding.LoginBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(IntroActivity.this, LoginActivity.class);
+            startActivity(intent);
+        });
 
     }
 }

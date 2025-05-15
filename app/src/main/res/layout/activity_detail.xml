@@ -8,13 +8,16 @@
     tools:context=".Activities.DetailActivity">
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:paddingBottom="50dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -38,7 +41,7 @@
                         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
                     <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/backBtn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
@@ -48,7 +51,7 @@
                         app:srcCompat="@drawable/back" />
 
                     <ImageView
-                        android:id="@+id/imageView9"
+                        android:id="@+id/favBtn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="48dp"
@@ -58,9 +61,10 @@
                         app:srcCompat="@drawable/fav_icon" />
 
                     <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/picList"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/white_corner_bg2"
+                        android:background="@drawable/white_corner_bg3"
                         android:clipToPadding="false"
                         android:paddingStart="4dp"
                         android:paddingEnd="4dp"
@@ -89,14 +93,14 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
-                        android:id="@+id/textView5"
+                        android:id="@+id/titleTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Title"
                         android:layout_margin="24dp"
-                        android:textStyle="bold"
+                        android:text="Title"
+                        android:textColor="@color/darkBlue"
                         android:textSize="24sp"
-                        android:textColor="@color/darkBlue"/>
+                        android:textStyle="bold" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -112,13 +116,13 @@
                             app:tint="@color/blue" />
 
                         <TextView
-                            android:id="@+id/textView6"
+                            android:id="@+id/adressTxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:layout_marginStart="8dp"
-                            android:textColor="@color/darkBlue"
-                            android:text="Address" />
+                            android:layout_weight="1"
+                            android:text="Address"
+                            android:textColor="@color/darkBlue" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -130,62 +134,64 @@
 
                         <RatingBar
                             android:id="@+id/ratingBar"
-                            android:rating="3"
-                            android:stepSize="0.1"
-                            android:scaleX="0.7"
-                            android:scaleY="0.7"
-                            android:numStars="5"
-                            android:progressTint="#ffc106"
-                            android:transformPivotX="0dp"
-                            android:isIndicator="true"
-                            android:indeterminate="false"
                             style="@style/Widget.AppCompat.RatingBar.Indicator"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                             />
+                            android:indeterminate="false"
+                            android:isIndicator="true"
+                            android:numStars="5"
+                            android:progressTint="#ffc106"
+                            android:rating="3"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:stepSize="0.1"
+                            android:transformPivotX="0dp" />
 
                         <TextView
-                            android:id="@+id/textView7"
+                            android:id="@+id/ratingTxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:text="0"
-                            android:textSize="16sp"
-                            android:textColor="@color/darkBlue"/>
+                            android:textColor="@color/darkBlue"
+                            android:textSize="16sp" />
                     </LinearLayout>
 
                     <TextView
                         android:id="@+id/textView8"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
                         android:text="Description"
                         android:textColor="@color/darkBlue"
                         android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:layout_marginStart="24dp"/>
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView9"
+                        android:id="@+id/descriptionTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="description"
-                        android:textSize="16sp"
-                        android:textColor="@color/darkBlue"
                         android:layout_marginHorizontal="24dp"
                         android:layout_marginTop="8dp"
-                        />
+                        android:text="description"
+                        android:textColor="@color/darkBlue"
+                        android:textSize="16sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginHorizontal="24dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/storke_bg"
                         android:orientation="horizontal">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.333">
 
                             <TextView
-                                android:id="@+id/textView10"
+                                android:id="@+id/durationTxt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="16dp"
@@ -193,20 +199,21 @@
                                 android:textColor="@color/darkBlue"
                                 android:textStyle="bold"
                                 app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.70"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <ImageView
-                                android:id="@+id/imageView12"
+                                android:id="@+id/imageView103"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="8dp"
-                                app:layout_constraintEnd_toStartOf="@+id/textView10"
-                                app:layout_constraintTop_toTopOf="@+id/textView10"
+                                app:layout_constraintEnd_toStartOf="@+id/durationTxt"
+                                app:layout_constraintTop_toTopOf="@+id/durationTxt"
                                 app:srcCompat="@drawable/hourglass" />
 
                             <TextView
-                                android:id="@+id/textView11"
+
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
@@ -214,9 +221,105 @@
                                 android:text="Duration"
                                 android:textColor="@color/darkBlue"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="@+id/textView10"
-                                app:layout_constraintStart_toStartOf="@+id/imageView12"
-                                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+                                app:layout_constraintEnd_toEndOf="@+id/durationTxt"
+                                app:layout_constraintStart_toStartOf="@+id/imageView103"
+                                app:layout_constraintTop_toBottomOf="@+id/durationTxt" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <View
+                            android:id="@+id/view"
+                            android:layout_width="1dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:background="@color/darkGrey" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.333">
+
+                            <TextView
+                                android:id="@+id/distanceTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="0"
+                                android:textColor="@color/darkBlue"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.66"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/imageView102"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="8dp"
+                                app:layout_constraintEnd_toStartOf="@+id/distanceTxt"
+                                app:layout_constraintTop_toTopOf="@+id/distanceTxt"
+                                app:srcCompat="@drawable/distance" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:text="Distance"
+                                android:textColor="@color/darkBlue"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/distanceTxt"
+                                app:layout_constraintStart_toStartOf="@+id/imageView102"
+                                app:layout_constraintTop_toBottomOf="@+id/distanceTxt" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <View
+                            android:id="@+id/view2"
+                            android:layout_width="1dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:background="@color/darkGrey" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.333">
+
+                            <TextView
+                                android:id="@+id/bedTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="0"
+                                android:textColor="@color/darkBlue"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.64"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/imageView101"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="8dp"
+                                app:layout_constraintEnd_toStartOf="@+id/bedTxt"
+                                app:layout_constraintTop_toTopOf="@+id/bedTxt"
+                                app:srcCompat="@drawable/bed" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:text="Bed"
+                                android:textColor="@color/darkBlue"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/bedTxt"
+                                app:layout_constraintStart_toStartOf="@+id/imageView101"
+                                app:layout_constraintTop_toBottomOf="@+id/bedTxt" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -225,4 +328,51 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@color/lightBlue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/addToCardBtn"
+            style="@android:style/Widget.Button"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/blue_btn_bg"
+            android:text="Chack Available"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/priceTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="$000"
+            android:textColor="@color/blue"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/Night"
+            android:textColor="@color/darkBlue"
+            app:layout_constraintBottom_toBottomOf="@+id/priceTxt"
+            app:layout_constraintStart_toEndOf="@+id/priceTxt"
+            app:layout_constraintTop_toTopOf="@+id/priceTxt" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

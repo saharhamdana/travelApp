@@ -7,20 +7,59 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.bumptech.glide.Glide;
+import com.example.travelapp.Adapter.PicListAdapter;
+import com.example.travelapp.Model.ItemModel;
 import com.example.travelapp.R;
+import com.example.travelapp.databinding.ActivityDetailBinding;
 
-public class DetailActivity extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class DetailActivity extends BaseActivity {
+    ActivityDetailBinding binding;
+    private ItemModel object;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_detail);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        binding= ActivityDetailBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        getIntentExtra();
+        setVariable();
+
+        initList();
+
+
+
+
+    }
+
+    private void initList() {
+        ArrayList<String> picList=new ArrayList<>(object.getPic());
+        Glide.with(this)
+                .load(picList.get(0))
+                .into(binding.pic);
+        binding.picList.setAdapter(new PicListAdapter(picList,binding.pic));
+        binding.picList.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+    }
+
+    private void setVariable() {
+        binding.titleTxt.setText(object.getTitle());
+        binding.priceTxt.setText("$"+object.getPrice());
+        binding.backBtn.setOnClickListener(v->finish());
+        binding.bedTxt.setText(""+object.getBed());
+        binding.durationTxt.setText(object.getDuration());
+        binding.distanceTxt.setText(object.getDistance());
+        binding.descriptionTxt.setText(object.getDescription());
+        binding.adressTxt.setText(object.getAddress());
+        binding.ratingTxt.setText(object.getScore()+"Rating");
+        binding.ratingBar.setRating((float) object.getScore());
+    }
+
+    private void getIntentExtra() {
+        object =(ItemModel) getIntent().getSerializableExtra("object");
     }
 }

@@ -2,10 +2,8 @@ package com.example.travelapp.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.travelapp.databinding.ActivityAdminDashboardBinding;
@@ -16,7 +14,7 @@ public class AdminDashboardActivity extends AppCompatActivity {
     private ActivityAdminDashboardBinding binding;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityAdminDashboardBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -25,19 +23,19 @@ public class AdminDashboardActivity extends AppCompatActivity {
     }
 
     private void setupListeners() {
-        // Bouton pour ajouter une nouvelle destination
-        binding.btnAddDestination.setOnClickListener(view -> {
+        // 📌 Carte : Ajouter une destination
+        binding.cardAddDestination.setOnClickListener(view -> {
             Intent intent = new Intent(AdminDashboardActivity.this, AddDestinationActivity.class);
             startActivity(intent);
         });
 
-        // Bouton pour afficher les utilisateurs (optionnel si tu veux l'ajouter)
-        binding.btnViewUsers.setOnClickListener(view -> {
+        // 📌 Carte : Voir les utilisateurs
+        binding.cardViewUsers.setOnClickListener(view -> {
             Intent intent = new Intent(AdminDashboardActivity.this, ViewUsersActivity.class);
             startActivity(intent);
         });
 
-        // Bouton déconnexion
+        // 📌 Bouton : Déconnexion
         binding.btnLogout.setOnClickListener(view -> {
             FirebaseAuth.getInstance().signOut();
             Toast.makeText(this, "Déconnexion réussie", Toast.LENGTH_SHORT).show();

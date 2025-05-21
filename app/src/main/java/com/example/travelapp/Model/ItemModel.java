@@ -12,14 +12,16 @@ public class ItemModel implements Serializable {
     private String dateTour;
     private int price;
     private int bed;
-
     private String distance;
     private double score;
+    private String tourGuideName;
     private ArrayList<String> pic;
 
     public ItemModel() {
-
+        // Constructeur vide requis pour Firebase
     }
+
+    // Getters et Setters
 
     public String getTitle() {
         return title;
@@ -99,6 +101,14 @@ public class ItemModel implements Serializable {
 
     public void setScore(double score) {
         this.score = score;
+    }
+
+    public String getTourGuideName() {
+        return tourGuideName;
+    }
+
+    public void setTourGuideName(String tourGuideName) {
+        this.tourGuideName = tourGuideName;
     }
 
     public ArrayList<String> getPic() {

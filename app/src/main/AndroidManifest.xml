@@ -35,6 +35,10 @@
         <activity android:name=".Activities.RegisterActivity" />
         <activity android:name=".Activities.AdminDashboardActivity" />
 
+        <activity android:name=".Activities.AddDestinationActivity"/>
+        <activity android:name=".Activities.ViewUsersActivity"/>
+
+
     </application>
 
 </manifest>
